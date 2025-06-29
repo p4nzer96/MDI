@@ -8,16 +8,16 @@ from pathlib import Path
 current_folder = Path(__file__).parent
 base_ds_path = get_environment()
 
+
 def make_idx_frll_morphs(genuine_dataset="frll") -> pd.DataFrame:
     """
     Generates a dataframe containing the indexed data of FRLL-Morphs dataframe
 
-    :param genuine_dataset: Selects the source of the bona fide, by the default the source is taken from FRLL dataset.
+    :param genuine_dataset: Selects the source of the bona fide; by default, the source is taken from FRLL dataset.
     Possible options are (amsl and frll)
     :return: The DataFrame containing the indexed data of FRLL-Morphs
     :rtype: pd.DataFrame
     """
-
     get_available_datasets()
 
     base_morph_dir = Path(available_datasets["morph"]["FRLL-Morphs"])
@@ -79,6 +79,7 @@ def make_idx_frll_morphs(genuine_dataset="frll") -> pd.DataFrame:
     data = pd.DataFrame(frll_dict, columns=["Path", "ID1", "ID2", "Morph", "Dataset", "Subdivision"])
 
     return data
+
 
 if __name__ == "__main__":
     frll_df = make_idx_frll_morphs()

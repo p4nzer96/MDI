@@ -1,12 +1,13 @@
-import numpy as np
+from collections import defaultdict
+from pathlib import Path
+
 import pandas as pd
 
-from collections import defaultdict
-from parse_environment import get_environment, available_datasets
-from pathlib import Path
+from parse_environment import get_environment
 
 current_folder = Path(__file__).parent
 base_ds_path = get_environment()
+
 
 def make_idx_ff_morphs():
     # Bonafide images
